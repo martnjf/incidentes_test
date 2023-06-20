@@ -88,7 +88,7 @@ def select_excel_file():
     file_path = filedialog.askopenfilename(filetypes=[("Excel Files", "*.xlsx")])
     if file_path:
         try:
-            df = pd.read_excel(file_path)
+            df = pd.read_excel(file_path, skiprows=1)
             pivot_table_titulo = generate_pivot_table(df, 'Título')
             pivot_table_solicitante = generate_pivot_table(df, 'Solicitante')
             pivot_table_area_solicitante = generate_pivot_table(df, 'Área del Solicitante')
